@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper  3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"  >
+<mapper namespace="com.gzf.mapper.UserMapper">
+	<insert id="insertUser" parameterType="UserBean">
+		insert into `s_user` (name,ct,ut,state) values(#{name},#{age})
+	</insert>
+	<select id="query" resultType="UserBean">
+		select * from `s_user`
+	</select>
+	<select id="selectUserById" parameterType="long" resultType="UserBean">
+		select * from `s_user` where id = #{id}
+	</select>
+</mapper>

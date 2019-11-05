@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 th:text="我是thymeleaf生成的文字"></h1>
+	     <table border="1" align="center" width="50%">
+         <tr>
+              <th>ID</th>
+              <th>姓名</th>
+              <th>操作</th>
+         </tr>
+         <!--
+          循环开始
+        -->
+          <tr th:each="user : ${userBeans}">
+               <td th:text="${user.id}"></td>
+               <td th:text="${user.name}"></td>
+               <td><a  th:href="@{/user/showUserById(id=${user.id})}">更改</a>
+                     <a  th:href="@{/user/delUserById(id=${user.id})}">删除</a>
+               </td>
+          </tr>
+          <!-- 循环结束 -->
+    </table>
+</body>
+</html>
